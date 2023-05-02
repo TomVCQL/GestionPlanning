@@ -43,6 +43,11 @@ class AlternantController extends AbstractController
                 {
                     if($mdpAlter == $mdpSend)
                     {
+                        $nom = $alternant->getNomAlter();
+                        $prenom = $alternant->getPrenomAlter();
+                        $session->set("pseudo", $pseudoSend);
+                        $session->set("prenom", $prenom);
+                        $session->set("nom", $nom);
                         return $this->redirectToRoute("etudiant_accueil");
                     }
                     else {
